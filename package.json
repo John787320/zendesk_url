@@ -19,7 +19,7 @@
     "build": "webpack -p --mode=production",
     "lint": "standard",
     "start": "zat server -p ./dist",
-    "package": "zat package -p ./dist",
+    "package": "webpack -p --mode=production && zat package -p ./dist",
     "validate": "zat validate -p ./dist"
   },
   "devDependencies": {
@@ -59,7 +59,7 @@
     "precss": "^3.1.2",
     "standard": "^11.0.1",
     "webpack": "^4.41.0",
-    "webpack-cli": "^3.0.8"
+    "webpack-cli": "^3.3.9"
   },
   "dependencies": {}
 }

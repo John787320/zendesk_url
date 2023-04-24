@@ -1,4 +1,5 @@
-import customFieldFactory from './customFields';
+import customFieldFactory from './customFields.js'
+import { faker } from '@faker-js/faker'
 
 /**
  * Generates a Zendesk Ticket object with random values
@@ -12,46 +13,45 @@ import customFieldFactory from './customFields';
  * @returns a new random Zendesk ticket object
  */
 const ticketFactory = (useEndpoint = false, ticketDefaults = {}, requesterDefaults = {}, assigneeUserDefault = {}) => {
-
   // When using the endpoint, the only field we care about is custom_fields
   if (useEndpoint) {
     return {
       ticket: {
         custom_fields: customFieldFactory(),
-        ...ticketDefaults,
+        ...ticketDefaults
       }
     }
   }
 
   const requester = {
-    externalId: `${faker.random.number()}`,
-    id: faker.random.number(),
+    externalId: `${faker.datatype.number()}`,
+    id: faker.datatype.number(),
     name: `${faker.name.firstName()} ${faker.name.lastName()}`,
-    ...requesterDefaults,
-  };
+    ...requesterDefaults
+  }
 
-  const assigneeFirstName = faker.name.firstName();
-  const assigneeLastName = faker.name.lastName();
+  const assigneeFirstName = faker.name.firstName()
+  const assigneeLastName = faker.name.lastName()
   const assignee = {
     user: {
       externalId: null,
       firstName: assigneeFirstName,
-      id: faker.random.number(),
+      id: faker.datatype.number(),
       lastName: assigneeLastName,
       name: `${assigneeFirstName} ${assigneeLastName}`,
       ...assigneeUserDefault
-    },
+    }
   }
 
   return {
     ticket: {
-      id: faker.random.number(),
-      assignee: assignee,
-      requester: requester,
-      externalId: `${faker.random.number()}`,
-      ...ticketDefaults,
+      id: faker.datatype.number(),
+      assignee,
+      requester,
+      externalId: `${faker.datatype.number()}`,
+      ...ticketDefaults
     }
   }
 }
 
-export default ticketFactory;
+export default ticketFactory

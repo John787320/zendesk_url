@@ -1,12 +1,12 @@
 {
-  "name": "Url Builder App V2",
+  "name": "URL Builder App V3",
   "author": {
     "name": "Ibotta, Inc.",
     "email": "osscompliance@ibotta.com",
-    "url": "https://www.ibotta.com/"
+    "url": "https://www.ibotta.com"
   },
-  "private": false,
   "defaultLocale": "en",
+  "private": false,
   "location": {
     "support": {
       "ticket_sidebar": "assets/iframe.html",
@@ -19,7 +19,7 @@
       "type": "multiline",
       "required": true
     }
-  ], 
-  "version": "1.0.0",
+  ],
+  "version": "1.0",
   "frameworkVersion": "2.0"
 }

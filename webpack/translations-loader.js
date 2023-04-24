@@ -22,6 +22,7 @@
  *   app.steps.click: 'this button'
  * }
  */
+/* eslint-disable array-callback-return */
 function translationFlatten (object, currentKeys = []) {
   const res = {}
 
@@ -48,8 +49,9 @@ function translationFlatten (object, currentKeys = []) {
 
   return res
 }
+/* eslint-enable array-callback-return */
 
-function TranslationsLoader (content) {
+export default function TranslationsLoader (content) {
   let translationsInput
   try {
     translationsInput = JSON.parse(content)
@@ -62,5 +64,3 @@ function TranslationsLoader (content) {
 
   return `module.exports = ${JSON.stringify(compiledTranslations)}`
 }
-
-module.exports = TranslationsLoader

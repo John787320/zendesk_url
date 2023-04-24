@@ -1,45 +1,30 @@
-/**
- *  URL Builder App
- **/
-import { resizeAppContainer, render, asyncErrorHandler, errorHandler } from '../../javascripts/lib/helpers'
-import getDefaultTemplate from '../../templates/default'
-import getContext, { buildTemplatesFromContext, getUrisFromSettings } from './context'
+import I18n from '../../javascripts/lib/i18n.js'
+import { render, resizeContainer, asyncErrorHandler, errorHandler } from '../../javascripts/lib/helpers.js'
+import { getUrisFromSettings, getContext, buildTemplatesFromContext } from './context.js'
+import getDefaultTemplate from '../../templates/default.js'
+import client from '../lib/client.js'
+
+const MAX_HEIGHT = 1000
 
 class App {
-  constructor (appData) {
-    this.settings = appData.metadata.settings;
+  constructor (_appData) {
+    this.settings = _appData.metadata.settings
 
-    // this.initializePromise is only used in testing
-    // indicate app initilization(including all async operations) is complete
     this.initializePromise = this.init()
   }
 
-  /**
-   * Initialize module, render main template
-   *
-   * Steps:
-   * 1. Retreive URIs from app settings.
-   * 2. Build a context object with ticket and user data.
-   * 3. Templates are built using the URI and Context to replace URL Placeholders with data from context.
-   * 4. Render these templates as buttons.
-   */
   async init () {
-    const uris = await asyncErrorHandler(getUrisFromSettings, this.settings);
-    const context = await asyncErrorHandler(getContext);
-    const templates = errorHandler(buildTemplatesFromContext, uris, context);
+    const currentUser = (await client.get('currentUser')).currentUser
 
-    return this.renderTemplates(templates);
-  }
+    I18n.loadTranslations(currentUser.locale)
 
-  /**
-   * An Array of Objects, with a "title" and "uri".
-   * The title is rendered as the button text, and the URI is the HTML link.
-   * @param {Array} templates
-   */
-  renderTemplates(templates) {
+    const uris = errorHandler(getUrisFromSettings, this.settings)
+    const context = await asyncErrorHandler(getContext)
+    const templates = errorHandler(buildTemplatesFromContext, uris, context)
+
     render('.loader', getDefaultTemplate(templates))
 
-    return resizeAppContainer(this.client);
+    return resizeContainer(MAX_HEIGHT)
   }
 }
 

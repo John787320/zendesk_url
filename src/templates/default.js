@@ -1,4 +1,4 @@
-import { templatingLoop as loop, escapeSpecialChars as escape } from '../javascripts/lib/helpers.js'
+import { templatingLoop as loop } from '../javascripts/lib/helpers.js'
 
 /**
  * Create a list item that is a button with a hyperlink.
@@ -7,11 +7,9 @@ import { templatingLoop as loop, escapeSpecialChars as escape } from '../javascr
 function uriMarkup (uri) {
   return (`
     <li>
-      <strong class="u-font-family-system u-semibold">
-        <a href="${uri.url}" target="_blank" class="btn btn-url">${uri.title}</a>
-      </strong>
+      <a href="${uri.url}" target="_blank" class="btn btn-default btn-url" role="button">${uri.title}</a>
     </li>
-  `);
+  `)
 }
 
 /**
@@ -20,8 +18,8 @@ function uriMarkup (uri) {
  */
 export default function (templateUris) {
   return (`
-    <div id="well-urls" class="well well-small">
+    <div id="well-urls" class="well well-sm">
       <ul class="btn-list">${loop(templateUris, uriMarkup)}</ul>
     </div>
-  `);
+  `)
 }

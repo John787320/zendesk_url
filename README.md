@@ -1,46 +1,30 @@
+![Build Status](https://github.com/Ibotta/url_builder_app/.github/workflows/build.yml/badge.svg)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Build Status](https://travis-ci.com/Ibotta/url_builder_app.svg?branch=master)](https://travis-ci.com/Ibotta/url_builder_app)
-[![Maintainability](https://api.codeclimate.com/v1/badges/ae9af0fae166c51f8f8a/maintainability)](https://codeclimate.com/repos/5d9242ca2d833400b1000180/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/ae9af0fae166c51f8f8a/test_coverage)](https://codeclimate.com/repos/5d9242ca2d833400b1000180/test_coverage)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](.github/CODE_OF_CONDUCT.md)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 
-# URL Builder App V2
+# URL Builder App V3
 
-## Description:
+**NOTE: This app is not currently on the Zendesk Marketplace. ** . Please follow the [Usage Instructions](#usage-instructions) to use this in your Zendesk domain.
 
 A Zendesk App to help you generate links for agents.
 
-## Changes from V1 to V2
-We've included some helpful information about what has changed in the V2 of this app in our [Wiki](https://github.com/Ibotta/url_builder_app/wiki/Changes-from-V1-to-V2)
+## Dependencies
+```
+"node": ">=18.12.1",
+"zcli": ">=1.0.0-beta.32"
+```
 
-## Usage Instructions:
+# Usage Instructions 
 
-1. Navigate to the Zendesk Marketplace and find "URL Builder App V2".
-2. Click "Install".
-3. Similarly, you can reach this screen by going to your installed apps, and clicking "Change Settings".
+## Build, Test, and Upload
 
-![change-settings](assets/change-settings.png)
+This app is not currently available in the Zendesk App Marketplace.  However, you can upload a copy of it to your Zendesk instance by following the instructions in [deployment docs](./.github/DEPLOY.md)..
 
-4. Select your account to install the app.
-5. Confirm the title; this will display in the URL Builder App box above the links:
+## Changing Settings
 
-![installation-title](assets/installation-title.png)
+Once the app is uploaded, you can Install it to the configured areas of Zendesk.  You can update the JSON array by entering the Zendesk Admin Center > Apps & Integrations > Private Apps > (Whatever you named the app, or URL BuildeR app V3 by default).
 
-6. The second box is for the URLS, and uses an array of JSON, described below. In this example, note we are using a placeholder `{{ticket.requester.id}}`.
-
-![json-array-of-urls](assets/json-array-of-urls.png)
-
-7. Optionally enable role restrictions if these URLs are not appropriate for all agents.
-8. Once your JSON is in place, click `Install`.
-9. Open a new browser to test your results.
-
-![links](assets/links.png)
-
-If we highlight the `User Info` link, we see the placeholder `ticket.requester.id` has been replaced with ticket requester's ID of `377511204654`.
-
-![example-url](assets/example-url.png)
-
-## JSON Array of URLs:
+## Configuring the JSON Array of URLs
 
 The following is an example of what can be entered into this app's settings:
 
@@ -61,16 +45,19 @@ This example will generate the following HTML inside the app:
 ```html
 <ul>
   <li>
-    <a href="http://example.com/?name=Robert C.Martin">First Title</a>
+    <a href="http://example.com/?name=Phillip_J_Fry">First Title</a>
   </li>
   <li>
-    <a href="http://example.com/?custom=secretRocketLaunchCodes">Second Title (with custom field)</a>
+    <a href="http://example.com/?custom=customValue">Second Title (with custom field)</a>
   </li>
 </ul>
 ```
 
-----
-### Available Placeholders
+### Sample Placeholders
+
+Below is a list of just a few of the available placeholders.  To see the full list of fields, please see the [Zendesk Apps Reference - API Reference](https://developer.zendesk.com/api-reference/apps/introduction/).  You can find fields available to [all locations](https://developer.zendesk.com/api-reference/apps/apps-support-api/all_locations/), and the [ticket and new ticket sidebar](https://developer.zendesk.com/api-reference/apps/apps-support-api/ticket_sidebar/).
+
+```
 * {{ticket.id}} //not available for new tickets
 * {{ticket.description}}
 * {{ticket.requester.id}}
@@ -96,6 +83,7 @@ This example will generate the following HTML inside the app:
 * {{currentUser.externalId}}
 * {{currentUser.firstName}}
 * {{currentUser.lastName}}
+```
 
 ## Issues
 To submit an issue, please follow the [available template](/.github/ISSUE_TEMPLATE.md).

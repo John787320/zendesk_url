@@ -6,6 +6,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import dependencies from './package.json' assert { type: 'json' }
 import { TranslationsPlugin } from './webpack/translations-plugin.js'
+import TerserPlugin from 'terser-webpack-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -113,5 +114,17 @@ export default {
       template: './src/templates/iframe.html',
       filename: 'iframe.html'
     })
-  ]
+  ],
+
+  "optimization": {
+    minimize: true,
+    minimizer: [new TerserPlugin({
+        terserOptions: {
+            format: {
+                comments: false,
+            },
+        },
+        extractComments: false,
+    })],
+  },
 }

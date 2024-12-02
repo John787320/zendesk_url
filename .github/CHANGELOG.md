@@ -1,4 +1,12 @@
+## 3.2.0
+
+- Updating dependencies to reduce build warnings and errors.
+- Zendesk Marketplace Requirements:
+  - Adding necessary screenshots.
+  - Removing generated Webpack LICENSE file.
+
 ## 3.1.0
+
 - Node 20
 - Dependabot
 - Package updates

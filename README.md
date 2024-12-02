@@ -10,8 +10,8 @@ A Zendesk App to help you generate links for agents.
 
 ## Dependencies
 ```
-"node": ">=18.12.1",
-"zcli": ">=1.0.0-beta.32"
+"node": ">=20.17.0",
+"@zendesk/zcli": "^1.0.0-beta.51"
 ```
 
 ## Usage 

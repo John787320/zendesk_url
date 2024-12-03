@@ -1,6 +1,10 @@
+# Changelog
+
 ## 3.2.0
 
-- Updating dependencies to reduce build warnings and errors.
+- Updated to Bootstrap V4, changed styling from wells to cards
+- Updated numerous dependencies to reduce build warnings and errors.
+- Removed some styling as it seemed unnecessary.
 - Zendesk Marketplace Requirements:
   - Adding necessary screenshots.
   - Removing generated Webpack LICENSE file.

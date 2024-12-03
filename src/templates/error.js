@@ -3,7 +3,7 @@
  */
 export default function (error) {
   return (`
-    <div class="card text-center">
+    <div id="error-card" class="card text-center">
       <div class="card-body">
         <div class="alert alert-danger" role="alert">
           ${error}

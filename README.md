@@ -67,7 +67,7 @@ This example will generate the following HTML inside the app:
 
 ### Sample Placeholders
 
-Below is a list of just a few of the available placeholders.  To see the full list of fields, please see the [Zendesk Apps Reference - API Reference](https://developer.zendesk.com/api-reference/apps/introduction/).  You can find fields available to [all locations](https://developer.zendesk.com/api-reference/apps/apps-support-api/all_locations/) and the [ticketsidebar](https://developer.zendesk.com/api-reference/apps/apps-support-api/ticket_sidebar/).
+Below is a list of just a few of the available object properties available as placeholders.  To see the full list of fields, please see the [Zendesk Apps Reference - API Reference](https://developer.zendesk.com/api-reference/apps/introduction/).  For example, you can use object properties available in [all locations](https://developer.zendesk.com/api-reference/apps/apps-support-api/all_locations/) and object properties available in the [ticket sidebar](https://developer.zendesk.com/api-reference/apps/apps-support-api/ticket_sidebar/) .
 
 ```
 * {{ticket.id}}
@@ -75,20 +75,15 @@ Below is a list of just a few of the available placeholders.  To see the full li
 * {{ticket.requester.id}}
 * {{ticket.requester.name}}
 * {{ticket.requester.email}}
-* {{ticket.requester.externalId}}
 * {{ticket.requester.user_fields.YYY}} = custom user fields can be used
 * {{ticket.assignee.user.id}}
 * {{ticket.assignee.user.name}}
 * {{ticket.assignee.user.email}}
-* {{ticket.assignee.user.externalId}}
-* {{ticket.assignee.group.id}}
-* {{ticket.assignee.group.name}}
 * {{ticket.custom_field_XXXXXXX}} // XXXXXXX = custom field id
 * {{ticket.organization.organization_fields.XXXXXXX}} // XXXXXXX = Field key, default is field name
 * {{currentUser.id}}
 * {{currentUser.name}}
 * {{currentUser.email}}
-* {{currentUser.externalId}}
 ```
 
 ## Issues

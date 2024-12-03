@@ -36,7 +36,7 @@ const externalAssets = {
   js: [
     'https://static.zdassets.com/zendesk_app_framework_sdk/2.0/zaf_sdk.min.js',
     'https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js',
-    'https://cdn.jsdelivr.net/jquery/3.7.1/jquery.min.js'
+    'https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js'
   ]
 }
 export default {

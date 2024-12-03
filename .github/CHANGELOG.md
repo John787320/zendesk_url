@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.2.0
+## 4.0.0
 
 - Updated to Bootstrap V4, changed styling from wells to cards
 - Updated numerous dependencies to reduce build warnings and errors.

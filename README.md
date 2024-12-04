@@ -2,7 +2,7 @@
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 
-# URL Builder App V3
+# URL Builder App
 
 **NOTE: This app is not currently on the Zendesk Marketplace. ** . Please follow the [Usage Instructions](#usage-instructions) to use this in your Zendesk domain.
 
@@ -33,7 +33,7 @@ If you are interested in extending the app or simply building from source, check
 
 ### Changing Settings
 
-Once the app is uploaded, you can Install it to the configured areas of Zendesk.  You can update the JSON array by entering the Zendesk Admin Center > Apps & Integrations > Private Apps > (Whatever you named the app, or URL BuildeR app V3 by default).
+Once the app is uploaded, you can Install it to the configured areas of Zendesk.  You can update the JSON array by entering the Zendesk Admin Center > Apps & Integrations > Private Apps > (Whatever you named the app, or URL Builder App by default).
 
 ### Configuring the JSON Array of URLs
 

@@ -31,7 +31,7 @@
     "@faker-js/faker": "^9.8.0",
     "@zendesk/zcli": "^1.0.0-beta.52",
     "babel-jest": "^30.0.2",
-    "babel-loader": "^9.2.1",
+    "babel-loader": "^10.0.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^13.0.0",
     "core-js": "^3.43.0",

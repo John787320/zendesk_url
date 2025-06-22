@@ -24,7 +24,7 @@
     "validate": "zcli apps:validate dist"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.2",
+    "@babel/core": "^7.27.4",
     "@babel/eslint-parser": "^7.25.1",
     "@babel/preset-env": "^7.25.4",
     "@babel/runtime-corejs3": "^7.25.6",
